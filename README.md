@@ -68,7 +68,7 @@ library(ROCR)
 library(MLmetrics)
 library(reshape2)
 library(ggplot2)
-
+```
 ## 🇹🇷 Türkçe
 
 # German Credit Verisi ile Makine Öğrenmesi ile Kredi Riski Sınıflandırması (R)
