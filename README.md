@@ -1,3 +1,4 @@
+## 🇬🇧 English
 # German Credit Risk Classification using Machine Learning in R
 
 This project focuses on building and evaluating machine learning models to classify credit risk (Good vs Bad) using the [German Credit dataset](https://www.kaggle.com/datasets/uciml/german-credit). The implementation is done in R, and the workflow includes model comparison, performance visualization, and advanced sampling techniques to address class imbalance.
@@ -67,3 +68,76 @@ library(ROCR)
 library(MLmetrics)
 library(reshape2)
 library(ggplot2)
+
+## 🇹🇷 Türkçe
+
+# German Credit Verisi ile Makine Öğrenmesi ile Kredi Riski Sınıflandırması (R)
+
+Bu proje, [German Credit veri seti](https://www.kaggle.com/datasets/uciml/german-credit) kullanılarak kredi riskinin (İyi / Kötü) sınıflandırılmasını amaçlamaktadır. Tüm işlemler R programlama dili ile gerçekleştirilmiş olup, model karşılaştırmaları, performans görselleştirmeleri ve dengesiz veri yapısıyla başa çıkmak için örnekleme teknikleri uygulanmıştır.
+
+## 📁 Veri Seti
+
+- Kaynak: [Kaggle - German Credit](https://www.kaggle.com/datasets/uciml/german-credit)
+- Gözlem Sayısı: 1000
+- Hedef değişken: `Class` (Good / Bad)
+- Özellikler: 20 adet finansal ve kategorik değişken
+
+## 🧠 Uygulanan Modeller
+
+Üç temel model eğitilmiş ve test edilmiştir:
+
+- Karar Ağacı (CART)
+- Rastgele Orman (Random Forest)
+- Destek Vektör Makineleri (SVM - Doğrusal)
+
+Her model aşağıdaki metriklerle değerlendirilmiştir:
+- Doğruluk (Accuracy)
+- AUC (Eğri Altı Alan)
+- ROC Eğrisi
+
+## ⚖️ Sınıf Dengesizliğiyle Baş Etme
+
+Verideki ciddi sınıf dengesizliğini gidermek için `caret` paketi yardımıyla çeşitli örnekleme yöntemleri uygulanmıştır:
+
+- Yukarı Örnekleme (UpSampling)
+- Aşağı Örnekleme (DownSampling)
+- SMOTE (Sentetik Azınlık Örnekleme Tekniği)
+- ROSE (Rastgele Aşırı Örnekleme)
+
+Her yöntem Rastgele Orman modeli üzerinde denenmiş ve aşağıdaki kriterlerle karşılaştırılmıştır:
+
+- Doğruluk
+- AUC
+- F1 Skoru ("Bad" sınıfı için)
+
+## 🔧 Hiperparametre Ayarlaması
+
+Son olarak optimize edilmiş bir Rastgele Orman modeli oluşturulmuştur. Özellikleri:
+
+- 10 katlı çapraz doğrulama
+- Yukarı Örnekleme
+- ROC metriğine göre değerlendirme
+- `mtry` parametresi için grid arama yöntemi
+
+## 📊 Görselleştirmeler
+
+Projede aşağıdaki görselleştirmeler yer almaktadır:
+- ROC eğrileri
+- Modellerin doğruluk karşılaştırma grafiği
+- Sınıf dağılımı pasta grafiği
+- Örnekleme yöntemlerine göre performans karşılaştırma grafiği
+- Final model için hiperparametre tuning grafiği
+
+## 📦 Kullanılan R Paketleri
+
+```r
+library(caret)
+library(rpart)
+library(randomForest)
+library(e1071)
+library(pROC)
+library(ROCR)
+library(MLmetrics)
+library(reshape2)
+library(ggplot2)
+
